@@ -1,33 +1,38 @@
+/* Importar la fuente desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
 
-
-*{
+/* Resetear los márgenes, el padding y el box-sizing */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+/* Estilos globales para el cuerpo de la página */
+body {
     color: white;
     background: black;
     font-family: sans-serif;
 }
 
-.wrap{
+/* Contenedor principal */
+.wrap {
     max-width: 1100px;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
-.wrap  h1{
-font-family: 'Pathway Gothic One', sans-serif;
-font-weight: 400;
-display: flex;
-flex-direction: column;
-text-align: center;
-margin: 15px 0;
+/* Encabezado */
+.wrap h1 {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px 0;
 }
-.wrap  h1:after{
+
+.wrap h1:after {
     content: '';
     width: 100%;
     height: 1px;
@@ -35,64 +40,56 @@ margin: 15px 0;
     margin: 20px 0;
 }
 
-.store-wraped{
+/* Contenedor de las categorías */
+.category_list {
     display: flex;
-
+    flex-direction: row;
+    width: 100%;
 }
 
-.category_list{
-    display: flex;
-    flex-direction: column;
-    width: 18%;
-}
-
-.category_list .category_item{
+.category_list .category_item {
     border-radius: 9px;
-display: block;
-width: 90%;
-padding: 15px 0;
-margin-bottom: 20px;
-background: crimson;
-font-family: monospace;
-
-
-text-align: center;
-text-decoration: none;
-color: aliceblue;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    background: crimson;
+    font-family: monospace;
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
 }
 
-.category_list .ct_item-active{
-    background: rgb(97, 97, 97)
+.category_list .ct_item-active {
+    background: rgb(97, 97, 97);
 }
 
-
-/*Productos*/
-
-.product_list{
-    width: 82%;
+/* Contenedor de los productos */
+.product_list {
+    width: 100%;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
+    margin: auto;
+    
 }
 
-.product_list .product-item{
+.product_list .product-item {
     width: 22%;
     margin-left: 3%;
     margin-bottom: 25px;
-    
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 } 
 
-.product_list .product-item img{
+.product_list .product-item img {
     width: 100%;
     /*box-shadow: 0px 0px 5px 0px rgba(245, 3, 3, 0.979) ;*/
     z-index: 99;
 }
 
-.product_list .product-item a{
+.product_list .product-item a {
     display: block;
     width: 100%;
     height: 28px;
@@ -101,4 +98,29 @@ color: aliceblue;
     color: #f8f6f6;
     text-align: center;
     text-decoration: none;
+}
+
+/* Estilos para pantallas de hasta 768px de ancho */
+@media screen and (max-width: 768px) {
+    .store-wraped {
+        flex-wrap: wrap;
+        flex-direction: row; /* Cambiar a un flujo de fila en pantallas más grandes */
+    }
+    .category_list {
+        width: 100%;
+        margin-bottom: 10px;
+        flex-direction: row;
+    }
+    .product_list .product-item {
+        width: 45%;
+        margin-left: 2.5%;
+    }
+}
+
+/* Estilos para pantallas de hasta 480px de ancho */
+@media screen and (max-width: 480px) {
+    .product_list .product-item {
+        width: 90%;
+        margin-left: 5%;
+    }
 }
